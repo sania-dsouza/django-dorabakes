@@ -2,4 +2,6 @@
 Django with Vue 
 
 Features :
-<to be added>
+
+[BE]: Django
+[FE]: Django templates, Bootstrap and VueJS
