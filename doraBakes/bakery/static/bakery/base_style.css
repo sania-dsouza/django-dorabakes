@@ -1,0 +1,49 @@
+.btn {
+    background-color: #80461d !important;
+    border: none;
+    border-radius: 10px;
+    width: 130px;
+}
+
+#loginBtn, #signupBtn{
+   width: auto;
+   }
+
+.btn:hover {
+    background-color: #5c3113 !important;
+    border: none;
+    }
+
+.modal-content {
+    background-color: #f5a962;
+    border-radius: 20px;
+    color: white;
+}
+
+label {
+    color: #80461d;
+    font-weight: bold;
+    display: inline-block;
+    width: 160px;
+    text-align: center;
+    font-size: 18px;
+    }
+
+input {
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    width: 240px;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    box-sizing: border-box;
+    color: green;
+    }
+
+button.close {
+    color: white;
+    font-weight: bold;
+    }
+
+button.close:hover {
+    color: #5c3113;
+    }
