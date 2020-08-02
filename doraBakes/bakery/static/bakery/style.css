@@ -3,6 +3,7 @@
     border: none;
     border-radius: 10px;
     width: 130px;
+    font-family: "Courier New";
 }
 
 #loginBtn, #signupBtn{
@@ -15,6 +16,7 @@
     }
 
 .modal-content {
+    font-family: "Courier New";
     background-color: #f5a962;
     border-radius: 20px;
     color: white;
@@ -46,4 +48,10 @@ button.close {
 
 button.close:hover {
     color: #5c3113;
+    }
+
+#app_greeting {
+    color: #80461d;
+    font-size: 39px;
+    font-family: "Courier New";
     }
