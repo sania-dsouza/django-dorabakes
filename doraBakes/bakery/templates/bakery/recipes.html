@@ -14,8 +14,11 @@
     <link rel= "shortcut icon" type='image/png' href="../static/favicon/favicon.png" />
 </head>
 <body>
-    <div class="main_div">
-
+    <div class="bakery">
+        <div id="app_greeting">
+          [[ message ]]
+        </div>
+        </br>
         {% include "./_modal.html" %}
         <div>
              <!--Button trigger modal-->
@@ -43,5 +46,20 @@
           });
        });
     </script>
+
+    <!-- Vue.js integration -->
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        var bakery = new Vue({
+            el: "#app_greeting",
+            data: {
+                message: "Welcome to Dora Bakes!"
+            },
+            delimiters : ['[[', ']]']
+        })
+    </script>
+
+
+
 </body>
 </html>
