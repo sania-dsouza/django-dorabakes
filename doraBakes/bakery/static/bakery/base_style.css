@@ -62,8 +62,11 @@ button.close:hover {
     background-color: #5c3113;
     border-radius: 20px;
     margin: 0px 20px 20px 20px;
-
     color: white;
+    }
+
+.recipe-card:hover {
+    box-shadow: 0 0 20px rgba(33,33,33,.9);
     }
 
 .video {
