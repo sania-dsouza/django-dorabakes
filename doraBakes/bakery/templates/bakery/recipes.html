@@ -10,7 +10,7 @@
     {% bootstrap_javascript jquery='full' %}
     <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
 
-    <link rel = "stylesheet" type="text/css" href="../static/bakery/style.css">
+    <link rel = "stylesheet" type="text/css" href="../static/bakery/base_style.css">
     <link rel= "shortcut icon" type='image/png' href="../static/favicon/favicon.png" />
 </head>
 <body>
@@ -31,6 +31,8 @@
               Sign Up
             </button>
 
+            </br>
+            </br>
             <recipe-card></recipe-card>
 
         </div>
@@ -58,18 +60,25 @@
     <template id="recipeCard">
         <div class="recipe-card">
             <div class="video">
-                test
+                <img src="" alt="brownie"/>
             </div>
 
-            <div class="recipeTitle">
-                <span> Brownie recipe </span>
-                <span> The best brownies you will ever eat!</span>
-                <span> Cooking time: 45 minutes </span>
+            <div>
+                <div class="recipe-text">
+                    <div id="recipe-title"> Decadent brownie </div>
+                    <div id="recipe-time"> 45 minutes </div>
+                </div>
+                </br>
+                <div>
+                    <div id="recipe-desc"> The best brownies you will ever eat!</div>
+                </div>
             </div>
 
-            <a href=""> Written recipe </a>
-
-            <img src="" alt="brownie"/>
+            </br>
+            <div id="recipe-written">
+                <a href=""> Written recipe </a>
+                <span id="recipe-veg"><img src="" alt="veg-indicator"/></span>
+            </div>
 
         </div>
     </template>

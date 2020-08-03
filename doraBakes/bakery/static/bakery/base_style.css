@@ -55,3 +55,59 @@ button.close:hover {
     font-size: 39px;
     font-family: "Courier New";
     }
+
+.recipe-card {
+    width: 330px;
+    font-family: "Courier New";
+    background-color: #5c3113;
+    border-radius: 20px;
+    margin: 0px 20px 20px 20px;
+
+    color: white;
+    }
+
+.video {
+    height: 220px;
+    text-align: center;
+    }
+
+.recipe-text {
+    font-weight: bold;
+    margin: 0 20 0 20;
+    }
+
+div#recipe-title {
+    padding-left: 10px;
+    float: left;
+    }
+
+div#recipe-time {
+    padding-right: 10px;
+    float: right;
+    }
+
+div#recipe-desc {
+    padding-left: 10px;
+    }
+
+div#recipe-written {
+    padding-left: 10px;
+    padding-bottom: 15px;
+    }
+
+div a {
+    color: #fad49b;
+    text-decoration: none;
+    border-bottom: #fad49b 3px solid;
+    }
+
+div a:hover {
+    color: white;
+    text-decoration: none;
+    border-bottom: white 3px solid;
+    }
+
+span#recipe-veg {
+    float: right;
+    padding-right: 10px;
+    }
