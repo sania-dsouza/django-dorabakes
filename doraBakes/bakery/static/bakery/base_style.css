@@ -84,6 +84,7 @@ div#recipe-title {
 div#recipe-time {
     padding-right: 10px;
     float: right;
+    font-weight: bold;
     }
 
 div#recipe-desc {
@@ -118,4 +119,16 @@ img {
     max-height: 100%;
     border-radius: 20px 20px 0 0;
     display: block;
+    }
+
+div#recipe-veg {
+    margin-left: 20px;
+    }
+
+div#recipe-veg img {
+    border-radius: 3px;
+    margin-left: 10px;
+    width: 30px;
+    height: 25px;
+    display: inline-block;
     }
