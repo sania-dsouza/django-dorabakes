@@ -88,6 +88,7 @@ div#recipe-time {
 
 div#recipe-desc {
     padding-left: 10px;
+
     }
 
 div#recipe-written {
@@ -110,4 +111,11 @@ div a:hover {
 span#recipe-veg {
     float: right;
     padding-right: 10px;
+    }
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 20px 20px 0 0;
+    display: block;
     }

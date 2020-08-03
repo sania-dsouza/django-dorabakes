@@ -55,17 +55,15 @@
     <!-- Vue.js integration -->
     <script src="https://unpkg.com/vue"></script>
 
-
     <!-- template -->
     <template id="recipeCard">
         <div class="recipe-card">
-            <div class="video">
-                <img src="" alt="brownie"/>
-            </div>
+            <img v-bind:src="'static/images/brownie.png'" alt="brownie"/>
+            </br>
 
             <div>
                 <div class="recipe-text">
-                    <div id="recipe-title"> Decadent brownie </div>
+                    <div id="recipe-title"> Decadent Brownies </div>
                     <div id="recipe-time"> 45 minutes </div>
                 </div>
                 </br>
@@ -85,14 +83,12 @@
 
     <!-- component registration -->
     <script>
-        recipeCard = Vue.component('recipe-card', {
-            data: function() {
-                return {
-                  count: 0
-                }
-                },
-            template: '#recipeCard',
-        });
+    recipeCard = Vue.component('recipe-card', {
+        data: function() {
+            return { }
+            },
+        template: '#recipeCard',
+    });
     </script>
 
 
