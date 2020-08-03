@@ -20,7 +20,8 @@
         </div>
         </br>
         {% include "./_modal.html" %}
-        <div>
+
+        <div id="main_app">
              <!--Button trigger modal-->
             <button id="loginBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
               Login
@@ -29,6 +30,8 @@
             <button id="signupBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#signupModal">
               Sign Up
             </button>
+
+            <recipe-card></recipe-card>
 
         </div>
     </div>
@@ -49,6 +52,41 @@
 
     <!-- Vue.js integration -->
     <script src="https://unpkg.com/vue"></script>
+
+
+    <!-- template -->
+    <template id="recipeCard">
+        <div class="recipe-card">
+            <div class="video">
+                test
+            </div>
+
+            <div class="recipeTitle">
+                <span> Brownie recipe </span>
+                <span> The best brownies you will ever eat!</span>
+                <span> Cooking time: 45 minutes </span>
+            </div>
+
+            <a href=""> Written recipe </a>
+
+            <img src="" alt="brownie"/>
+
+        </div>
+    </template>
+
+    <!-- component registration -->
+    <script>
+        recipeCard = Vue.component('recipe-card', {
+            data: function() {
+                return {
+                  count: 0
+                }
+                },
+            template: '#recipeCard',
+        });
+    </script>
+
+
     <script>
         var bakery = new Vue({
             el: "#app_greeting",
@@ -57,6 +95,13 @@
             },
             delimiters : ['[[', ']]']
         })
+
+        var main_app = new Vue({
+            el: "#main_app",
+            data: {},
+            delimiters : ['[[', ']]']
+        })
+
     </script>
 
 </body>
