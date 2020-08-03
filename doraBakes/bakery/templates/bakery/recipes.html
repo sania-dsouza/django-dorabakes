@@ -9,7 +9,7 @@
     {% bootstrap_css %} {# calling bootstrap before custom styles allows over-riding BS styles #}
     {% bootstrap_javascript jquery='full' %}
     <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel = "stylesheet" type="text/css" href="../static/bakery/base_style.css">
     <link rel= "shortcut icon" type='image/png' href="../static/favicon/favicon.png" />
 </head>
@@ -58,7 +58,14 @@
     <!-- template -->
     <template id="recipeCard">
         <div class="recipe-card">
-            <img v-bind:src="'static/images/brownie.png'" alt="brownie"/>
+            <div class="recipe-video">
+                <img v-bind:src="'static/images/brownie.png'" alt="brownie"/>
+                <div class="overlay">
+                    <a href="https://www.youtube.com/watch?v=Z1OLG7F3HD4" class="icon" title = "YT Play">
+                        <i class="fa fa-youtube-play"></i>
+                    </a>
+                </div>
+            </div>
             </br>
 
             <div>

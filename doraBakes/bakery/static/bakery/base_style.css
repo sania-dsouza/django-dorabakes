@@ -65,13 +65,38 @@ button.close:hover {
     color: white;
     }
 
+.recipe-video {
+    position: relative;
+    }
+
 .recipe-card:hover {
     box-shadow: 0 0 20px rgba(33,33,33,.9);
     }
 
-.video {
-    height: 220px;
+.overlay {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: .3s ease;
+    }
+
+.icon {
+    color: red;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     text-align: center;
+}
+
+.icon:hover {
+    color: white;
     }
 
 .recipe-text {
@@ -100,13 +125,13 @@ div#recipe-written {
     padding-bottom: 15px;
     }
 
-div a {
+div#recipe-written a {
     color: #fad49b;
     text-decoration: none;
     border-bottom: #fad49b 3px solid;
     }
 
-div a:hover {
+div#recipe-written a:hover {
     color: white;
     text-decoration: none;
     border-bottom: white 3px solid;
