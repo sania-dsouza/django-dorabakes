@@ -104,6 +104,7 @@ button.close:hover {
     text-align: center;
 }
 
+
 .icon:hover {
     color: white;
     }
@@ -122,6 +123,7 @@ div#recipe-time {
     padding-right: 10px;
     float: right;
     font-weight: bold;
+    width: auto;
     }
 
 div#recipe-desc {
