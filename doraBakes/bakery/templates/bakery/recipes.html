@@ -10,7 +10,7 @@
     {% bootstrap_javascript jquery='full' %}
     <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel = "stylesheet" type="text/css" href="../static/bakery/base_style.css">
+    <link rel = "stylesheet" type="text/css" href="../static/bakery/style.css">
     <link rel= "shortcut icon" type='image/png' href="../static/favicon/favicon.png" />
 </head>
 <body>
@@ -49,6 +49,11 @@
             formURL: "{% url 'signup' %}",
             modalID: "#signupModal"
           });
+
+        $("#recipeBtn").modalForm({
+            formURL: "{% url 'written-recipe' %}",
+            modalID: "#recipeModal"
+          });
        });
     </script>
 
@@ -81,7 +86,7 @@
 
             </br>
             <div id="recipe-written">
-                <a href=""> Written recipe </a>
+                <a id="recipeBtn"> Written recipe </a>
                 <div id="recipe-time"> 45 minutes </div>
             </div>
 

@@ -70,6 +70,10 @@ def signup_page(request):
     return render(request, 'bakery/signup.html', {'form': form})
 
 
+def written_recipe(request):
+    return render(request, 'bakery/written.html')
+
+
 @csrf_protect
 def recipes(request):
     return render(request, 'bakery/recipes.html')
