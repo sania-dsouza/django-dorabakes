@@ -27,6 +27,10 @@ div#recipeModal .modal-content {
     color: #5c3113;
     }
 
+#recipeBtn {
+    cursor: pointer;
+    }
+
 label {
     color: #80461d;
     font-weight: bold;
