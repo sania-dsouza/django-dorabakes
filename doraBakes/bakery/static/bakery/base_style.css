@@ -4,6 +4,7 @@
     border-radius: 10px;
     width: 130px;
     font-family: "Courier New";
+    margin: 0 10px;
 }
 
 #loginBtn, #signupBtn{
@@ -171,3 +172,32 @@ div#recipe-veg img {
     height: 25px;
     display: inline-block;
     }
+
+#nav_bar {
+    border-bottom: 2px solid #f0af69;
+    box-shadow: 0px 3px 0 #f0af69;
+    }
+
+.navbar-brand.mb-0{
+    margin-right: 130px;
+    font-size: 36px;
+    color: #80461d;
+    }
+
+.navbar-brand.mb-0:hover {
+    color: #5c3113;
+    }
+
+.nav-item {
+    font-size: 24px;
+    margin: 0 20px;
+    }
+
+.nav-link:hover {
+    color: #80461d !important;
+    }
+
+#login-buttons {
+    margin-left: 230px;
+    }
+
