@@ -192,7 +192,6 @@ div#recipe-veg img {
 .nav-link {
     font-size: 24px;
     margin: 0 20px;
-
     }
 
 .nav-link:hover {
@@ -201,5 +200,10 @@ div#recipe-veg img {
 
 #login-buttons {
     margin-left: 230px;
+    }
+
+.dropdown-item:hover {
+    color: #5c3113;
+    background-color: white;
     }
 
