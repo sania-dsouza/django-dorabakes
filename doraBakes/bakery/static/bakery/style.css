@@ -180,8 +180,8 @@ div#recipe-veg img {
     }
 
 .navbar-brand.mb-0{
-    margin-right: 130px;
-    font-size: 36px;
+    margin-right: 230px;
+    font-size: 42px;
     color: #80461d;
     }
 
@@ -191,7 +191,7 @@ div#recipe-veg img {
 
 .nav-link {
     font-size: 24px;
-    margin: 0 20px;
+    margin: 0 30px;
     }
 
 .nav-link:hover {
@@ -199,7 +199,7 @@ div#recipe-veg img {
     }
 
 #login-buttons {
-    margin-left: 230px;
+    margin-left: 330px;
     }
 
 .dropdown-item:hover {
@@ -207,3 +207,10 @@ div#recipe-veg img {
     background-color: white;
     }
 
+.nav-link.dropdown-toggle {
+    font-size: 18px;
+    }
+
+.b-avatar {
+    background-color: #f0af69;
+}
