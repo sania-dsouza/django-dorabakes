@@ -61,10 +61,12 @@ button.close:hover {
     }
 
 #app_greeting {
-    color: #80461d;
-    font-size: 39px;
+    color: #5c3113;
+    font-size: 34px;
+    font-weight: bold;
     font-family: "Courier New";
     margin-left: 350px;
+    margin-top: 10px;
     }
 
 .recipe-card {
@@ -175,8 +177,7 @@ div#recipe-veg img {
     }
 
 #nav_bar {
-    border-bottom: 2px solid #f0af69;
-    box-shadow: 0px 3px 0 #f0af69;
+    border-bottom: 4px solid #f0af69;
     }
 
 .navbar-brand.mb-0{
@@ -247,7 +248,7 @@ a img#favorite_heart {
 
 .filter_title {
     color: #80461d;
-    font-size: 20px;
+    font-size: 24px;
     padding-top: 30px;
 }
 
