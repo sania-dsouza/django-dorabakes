@@ -30,6 +30,10 @@
                 <b-nav-item href="#">Savory</b-nav-item>
               </b-navbar-nav>
 
+              <b-navbar-nav id="favorite">
+                  <a href="#"> <img width= 30px height=30px id="favorite_heart" v-bind:src="'static/images/favorites.png'"/></a>
+              </b-navbar-nav>
+
               <b-navbar-nav id="login-buttons">
                 <b-button id="loginBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
                   Login

@@ -199,7 +199,7 @@ div#recipe-veg img {
     }
 
 #login-buttons {
-    margin-left: 330px;
+    margin-left: 130px;
     }
 
 .dropdown-item:hover {
@@ -214,3 +214,11 @@ div#recipe-veg img {
 .b-avatar {
     background-color: #f0af69;
 }
+
+#favorite {
+    margin-left: 270px;
+    }
+
+a img#favorite_heart {
+    border-radius: 0px;
+    }
