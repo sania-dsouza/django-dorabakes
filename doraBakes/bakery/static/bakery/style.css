@@ -231,14 +231,14 @@ a img#favorite_heart {
    margin: 0;
    padding: 0;
    width: 300px;
-   background-color: #f1f1f1;
    position: fixed;
    height: 100%;
    overflow: auto;
-   background-color: white;
+   background-color: #f7e2c8;
    border-right: 2px solid #f0af69;
-   box-shadow: 3px 0px 0 #f0af69;
+   box-shadow: 0 20px 15px rgba(33,33,33,.5);
    text-align: center;
+
 }
 
 .recipe_card_container {
