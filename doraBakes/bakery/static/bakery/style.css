@@ -238,8 +238,42 @@ a img#favorite_heart {
    background-color: white;
    border-right: 2px solid #f0af69;
    box-shadow: 3px 0px 0 #f0af69;
+   text-align: center;
 }
 
 .recipe_card_container {
     margin-left: 350px;
+    }
+
+.filter_title {
+    color: #80461d;
+    font-size: 20px;
+    padding-top: 30px;
+}
+
+
+.filter_text {
+    color: #5c3113;
+    font-size: 14px;
+    width: 200px;
+    font-style: italic;
+    }
+
+input[type="checkbox"]
+{
+    vertical-align:middle;
+}
+
+.filter_btns{
+    background-color: #80461d !important;
+    border: none;
+    border-radius: 10px;
+    width: 70px;
+    margin: 10px 10px;
+    color: white;
+    font-size: 14px;
+}
+
+.filter_btns:hover {
+    background-color: #5c3113 !important;
     }
