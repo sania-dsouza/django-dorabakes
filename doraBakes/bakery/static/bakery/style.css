@@ -64,7 +64,7 @@ button.close:hover {
     color: #80461d;
     font-size: 39px;
     font-family: "Courier New";
-    margin: 0px 20px 20px 20px;
+    margin-left: 350px;
     }
 
 .recipe-card {
@@ -225,4 +225,21 @@ div#recipe-veg img {
 
 a img#favorite_heart {
     border-radius: 0px;
+    }
+
+.sidebar {
+   margin: 0;
+   padding: 0;
+   width: 300px;
+   background-color: #f1f1f1;
+   position: fixed;
+   height: 100%;
+   overflow: auto;
+   background-color: white;
+   border-right: 2px solid #f0af69;
+   box-shadow: 3px 0px 0 #f0af69;
+}
+
+.recipe_card_container {
+    margin-left: 350px;
     }
