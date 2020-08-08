@@ -8,6 +8,7 @@ class Recipe(models.Model):
     ]
     title = models.CharField(max_length=50, null=False, blank=False)
     category = models.CharField(max_length=20, choices=RECIPE_CHOICES, null=False, blank=False)
+    link = models.URLField(null=True)
     description = models.CharField(max_length=100, null=True, blank=True)
     image = models.ImageField(upload_to="./bakery/images", null=True)
     written_recipe = models.TextField(null=True)
