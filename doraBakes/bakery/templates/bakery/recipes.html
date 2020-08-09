@@ -132,7 +132,7 @@
             v-bind:category="recipe.category"
             v-bind:link="recipe.link"
             v-bind:description="recipe.description"
-            v-bind:image="recipe.image"
+            v-bind:img_link="recipe.img_link"
             v-bind:meat_indicator="recipe.meat_indicator"
             v-bind:cooking_time="recipe.cooking_time"
             ></recipe-card>
@@ -142,7 +142,7 @@
     <template id="recipeCard">
         <div class="recipe-card">
             <div class="recipe-video">
-                <img v-bind:src="'static/images/brownie.png'" alt="brownie"/>
+                <img v-bind:src="img_link" alt="img_name"/>
                 <div class="overlay">
                     <a target="_blank" v-bind:href="link" class="icon" title = "YT Play">
                         <i class="fa fa-youtube-play"></i>
@@ -195,7 +195,7 @@
                         category: '{{ recipe.category }}',
                         link: '{{ recipe.link }}',
                         description: '{{ recipe.description }}',
-                        image: '{{ recipe.image }}',
+                        img_link: '{{ recipe.img_link }}',
                         meat_indicator: '{{ recipe.meat_indicator }}',
                         cooking_time: '{{ recipe.cooking_time }}',
                     },
@@ -219,7 +219,7 @@
 
     recipeCard = Vue.component('recipe-card', {
         delimiters: ['[[', ']]'],
-        props: ['title', 'category', 'link', 'description', 'image', 'meat_indicator', 'cooking_time'],
+        props: ['title', 'category', 'link', 'description', 'img_link', 'meat_indicator', 'cooking_time'],
         template: '#recipeCard',
     });
 
