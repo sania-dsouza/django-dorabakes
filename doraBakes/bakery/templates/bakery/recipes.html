@@ -154,7 +154,8 @@
             <div>
                 <div class="recipe-text">
                     <div id="recipe-title" v-html="title"> </div>
-                    <div id="recipe-veg"><img v-bind:src="'static/images/non-veg.png'" alt="veg-indicator"/></div>
+                    <div class="recipe-veg" v-if="meat_indicator=='True'"><img v-bind:src="'static/images/non-veg.png'" alt="non-veg-indicator"/></div>
+                    <div class="recipe-veg" v-else><img v-bind:src="'static/images/veg.png'" alt="veg-indicator"/></div>
                 </div>
                 </br>
                 <div>

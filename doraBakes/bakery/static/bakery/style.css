@@ -160,7 +160,7 @@ div#recipe-written a:hover {
     border-bottom: white 3px solid;
     }
 
-span#recipe-veg {
+span.recipe-veg {
     float: right;
     padding-right: 10px;
     }
@@ -172,11 +172,11 @@ img {
     display: block;
     }
 
-div#recipe-veg {
+div.recipe-veg {
     margin-left: 20px;
     }
 
-div#recipe-veg img {
+div.recipe-veg img {
     border-radius: 3px;
     margin-left: 10px;
     width: 30px;
