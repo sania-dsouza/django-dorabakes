@@ -76,6 +76,8 @@ button.close:hover {
     border-radius: 20px;
     margin: 0px 20px 20px 20px;
     color: white;
+    float: left;
+    min-height: 425px;
     }
 
 .recipe-video {
@@ -132,7 +134,7 @@ div#recipe-time {
 
 div#recipe-desc {
     padding-left: 10px;
-
+    min-height: 45px;
     }
 
 div#recipe-written {
