@@ -10,7 +10,7 @@ class Recipe(models.Model):
     category = models.CharField(max_length=20, choices=RECIPE_CHOICES, null=False, blank=False)
     link = models.URLField(null=True)
     description = models.CharField(max_length=100, null=True, blank=True)
-    image = models.ImageField(upload_to="./bakery/images", null=True)
+    image = models.ImageField(upload_to="./bakery/static/images", null=True)
     ingredients = models.TextField(null=True)
     method = models.TextField(null=True)
     meat_indicator = models.BooleanField(default=True)  # default baked good contains meat
