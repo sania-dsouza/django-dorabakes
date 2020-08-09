@@ -11,7 +11,8 @@ class Recipe(models.Model):
     link = models.URLField(null=True)
     description = models.CharField(max_length=100, null=True, blank=True)
     image = models.ImageField(upload_to="./bakery/images", null=True)
-    written_recipe = models.TextField(null=True)
+    ingredients = models.TextField(null=True)
+    method = models.TextField(null=True)
     meat_indicator = models.BooleanField(default=True)  # default baked good contains meat
     cooking_time = models.IntegerField()   # in minutes
 

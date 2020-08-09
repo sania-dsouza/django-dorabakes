@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
-    <link rel = "stylesheet" type="text/css" href="../static/bakery/style.css">
+    <link rel = "stylesheet" type="text/css" href="../static/bakery/base_style.css">
     <link rel= "shortcut icon" type='image/png' href="../static/favicon/favicon.png" />
 </head>
 <body>
@@ -92,7 +92,7 @@
         {% include "./_modal.html" %}
 
         <div class="recipe_card_container">
-        <recipe-card></recipe-card>
+        <recipe-card-list></recipe-card-list>
         </div>
         </div>
     </div>
@@ -125,11 +125,17 @@
     <!-- template -->
     <template id="recipeCardList">
         <div class="recipe-card-list">
-            <recipe-card>
+            <recipe-card
             v-for="recipe in recipes"
             v-bind:key="recipe.title"
+            v-bind:title="recipe.title"
+            v-bind:category="recipe.category"
             v-bind:link="recipe.link"
-            </recipe-card>
+            v-bind:description="recipe.description"
+            v-bind:image="recipe.image"
+            v-bind:meat_indicator="recipe.meat_indicator"
+            v-bind:cooking_time="recipe.cooking_time"
+            ></recipe-card>
         </div>
     </template>
 
@@ -138,7 +144,7 @@
             <div class="recipe-video">
                 <img v-bind:src="'static/images/brownie.png'" alt="brownie"/>
                 <div class="overlay">
-                    <a target="_blank" v-bind:href="$store.getters.getRecipeAll()['link']" class="icon" title = "YT Play">
+                    <a target="_blank" v-bind:href="link" class="icon" title = "YT Play">
                         <i class="fa fa-youtube-play"></i>
                     </a>
                 </div>
@@ -147,19 +153,19 @@
 
             <div>
                 <div class="recipe-text">
-                    <div id="recipe-title"> Decadent Brownies </div>
+                    <div id="recipe-title" v-html="title"> </div>
                     <div id="recipe-veg"><img v-bind:src="'static/images/non-veg.png'" alt="veg-indicator"/></div>
                 </div>
                 </br>
                 <div>
-                    <div id="recipe-desc"> The best brownies you will ever eat!</div>
+                    <div id="recipe-desc" v-html="description"></div>
                 </div>
             </div>
 
             </br>
             <div id="recipe-written">
                 <a id="recipeBtn"> Written recipe </a>
-                <div id="recipe-time"><i style="font-size: 21px;" class="fa fa-clock-o" title="clock"></i><span> 45 mins </span>
+                <div id="recipe-time"><i style="font-size: 21px;" class="fa fa-clock-o" title="clock"></i></span><span v-html="cooking_time"></span><span> mins</span>
                 </div>
             </div>
 
@@ -195,10 +201,10 @@
                     },
                 {% endfor %}
                         ],
-                    },
+             },
             getters: {
                 getRecipeAll: (state) => () => {
-                    return state.recipes.find(recipes => 1 == 1)
+                    return state.recipes.find(recipes => 2 == 2)
                     },
                 }
         })
@@ -208,7 +214,7 @@
         data: function() {
             return { recipes: store.state.recipes }
             },
-        template: '#recipeCardTemplate',
+        template: '#recipeCardList',
     });
 
     recipeCard = Vue.component('recipe-card', {

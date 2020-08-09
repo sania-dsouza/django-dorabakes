@@ -278,3 +278,7 @@ input[type="checkbox"]
 .filter_btns:hover {
     background-color: #5c3113 !important;
     }
+
+.fa.fa-clock-o {
+    margin-right: 5px;
+    }
