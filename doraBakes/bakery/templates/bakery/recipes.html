@@ -119,15 +119,26 @@
     <!-- Vue.js integration -->
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <script src="https://unpkg.com/vuex"></script>
 
 
     <!-- template -->
+    <template id="recipeCardList">
+        <div class="recipe-card-list">
+            <recipe-card>
+            v-for="recipe in recipes"
+            v-bind:key="recipe.title"
+            v-bind:link="recipe.link"
+            </recipe-card>
+        </div>
+    </template>
+
     <template id="recipeCard">
         <div class="recipe-card">
             <div class="recipe-video">
                 <img v-bind:src="'static/images/brownie.png'" alt="brownie"/>
                 <div class="overlay">
-                    <a target="_blank" href="https://www.youtube.com/watch?v=Z1OLG7F3HD4" class="icon" title = "YT Play">
+                    <a target="_blank" v-bind:href="$store.getters.getRecipeAll()['link']" class="icon" title = "YT Play">
                         <i class="fa fa-youtube-play"></i>
                     </a>
                 </div>
@@ -155,21 +166,9 @@
         </div>
     </template>
 
-    <!-- component registration -->
     <script>
-    recipeCard = Vue.component('recipe-card', {
-        data: function() {
-            return { }
-            },
-        template: '#recipeCard',
-    });
-    </script>
-
-
-    <script>
-        var nav_bar = new Vue({ el: '#nav_bar' });
-
-        var bakery = new Vue({
+    var nav_bar = new Vue({ el: '#nav_bar' });
+    var bakery = new Vue({
             el: "#app_greeting",
             data: {
                 message: "Welcome to Dora Bakes!"
@@ -177,11 +176,52 @@
             delimiters : ['[[', ']]']
         })
 
-        var main_app = new Vue({
-            el: "#main_app",
-            data: {},
-            delimiters : ['[[', ']]']
+     </script>
+
+    <!-- Vue store -->
+    <script>
+        const store = new Vuex.Store({
+            state: {
+                recipes: [
+                {% for recipe in recipes %}
+                    {
+                        title: '{{ recipe.title }}',
+                        category: '{{ recipe.category }}',
+                        link: '{{ recipe.link }}',
+                        description: '{{ recipe.description }}',
+                        image: '{{ recipe.image }}',
+                        meat_indicator: '{{ recipe.meat_indicator }}',
+                        cooking_time: '{{ recipe.cooking_time }}',
+                    },
+                {% endfor %}
+                        ],
+                    },
+            getters: {
+                getRecipeAll: (state) => () => {
+                    return state.recipes.find(recipes => 1 == 1)
+                    },
+                }
         })
+
+    //component registration
+    recipeCardList = Vue.component('recipe-card-list', {
+        data: function() {
+            return { recipes: store.state.recipes }
+            },
+        template: '#recipeCardTemplate',
+    });
+
+    recipeCard = Vue.component('recipe-card', {
+        delimiters: ['[[', ']]'],
+        props: ['title', 'category', 'link', 'description', 'image', 'meat_indicator', 'cooking_time'],
+        template: '#recipeCard',
+    });
+
+    //app
+    var main_app = new Vue({
+        store,
+        delimiters : ['[[', ']]']
+        }).$mount('#main_app');
 
     </script>
 

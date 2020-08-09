@@ -17,6 +17,7 @@ from .forms import LoginForm, SignUpForm
 
 # def base_page(request):
 #     return HttpResponse("This is a test page")
+from .models import Recipe
 
 
 class LoginClass(BSModalCreateView):
@@ -76,7 +77,11 @@ def written_recipe(request):
 
 @csrf_protect
 def recipes(request):
-    return render(request, 'bakery/recipes.html')
+    recipes = Recipe.objects.all()
+    data = {
+        'recipes': recipes,
+    }
+    return render(request, 'bakery/recipes.html', data)
 
 
 @csrf_protect
