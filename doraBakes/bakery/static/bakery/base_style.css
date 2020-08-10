@@ -260,6 +260,9 @@ a img#favorite_heart {
     padding-top: 30px;
 }
 
+.recipeBtn {
+    cursor: pointer;
+    }
 
 .filter_text {
     color: #5c3113;

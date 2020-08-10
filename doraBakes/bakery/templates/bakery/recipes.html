@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
-    <link rel = "stylesheet" type="text/css" href="../static/bakery/style.css">
+    <link rel = "stylesheet" type="text/css" href="../static/bakery/base_style.css">
     <link rel= "shortcut icon" type='image/png' href="../static/favicon/favicon.png" />
 </head>
 <body>
@@ -110,7 +110,7 @@
             modalID: "#signupModal"
           });
 
-        $("#recipeBtn").modalForm({
+        $(".recipeBtn").modalForm({
             formURL: "{% url 'written-recipe' %}",
             modalID: "#recipeModal"
           });
@@ -166,7 +166,7 @@
 
             </br>
             <div id="recipe-written">
-                <a id="recipeBtn"> Written recipe </a>
+                <a class="recipeBtn"> Written recipe </a>
                 <div id="recipe-time"><i style="font-size: 21px;" class="fa fa-clock-o" title="clock"></i></span><span v-html="cooking_time"></span><span> mins</span>
                 </div>
             </div>
