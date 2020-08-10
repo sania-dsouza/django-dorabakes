@@ -111,10 +111,11 @@
           });
 
         $(".recipeBtn").modalForm({
-            formURL: "{% url 'written-recipe' %}",
-            modalID: "#recipeModal"
+                formURL: "{% url 'written-recipe' title="Decadent Brownies" %}",
+                modalID: "#recipeModal"
           });
-       });
+          });
+
     </script>
 
     <!-- Vue.js integration -->

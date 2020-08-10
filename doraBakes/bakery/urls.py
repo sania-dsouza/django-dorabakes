@@ -7,7 +7,7 @@ urlpatterns = [
     path('', views.recipes, name='recipes'),
     path('login/', views.login_page, name='login'),
     path('signup/', views.signup_page, name='signup'),
-    path('written-recipe/', views.written_recipe, name='written-recipe'),
+    path('written_recipe/<title>', views.written_recipe, name='written-recipe'),
     path('recipes/<username>', views.recipes_user, name="recipes_user"),
 ]
 
