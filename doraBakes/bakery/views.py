@@ -71,8 +71,8 @@ def signup_page(request):
     return render(request, 'bakery/signup.html', {'form': form})
 
 
-def written_recipe(request, title):
-    recipe = Recipe.objects.get(title=title)
+def written_recipe(request, id):
+    recipe = Recipe.objects.get(id=id)
     return render(request, 'bakery/written.html', {'recipe': recipe})
 
 
