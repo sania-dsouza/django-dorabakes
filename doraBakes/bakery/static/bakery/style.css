@@ -293,3 +293,7 @@ input[type="checkbox"]
 .fa.fa-clock-o {
     margin-right: 5px;
     }
+
+a.nav-link.active {
+    color: #5c3113 !important;
+    }

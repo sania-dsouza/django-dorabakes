@@ -86,5 +86,21 @@ def recipes(request):
 
 
 @csrf_protect
+def recipes_filt(request, filter):
+
+    if filter == 1:
+        recipes = Recipe.objects.filter(category="SWEET")
+    elif filter == 2:
+        recipes = Recipe.objects.filter(category="SAVORY")
+    else:
+        recipes = Recipe.objects.all()
+
+    data = {
+        'recipes': recipes,
+    }
+    return render(request, 'bakery/recipes.html', data)
+
+
+@csrf_protect
 def recipes_user(request, username):
     return HttpResponse("Recipes of the logged in user")

@@ -26,13 +26,13 @@
 
             <b-collapse id="nav-collapse" is-nav>
               <b-navbar-nav>
-                <b-nav-item href="#">Sweet</b-nav-item>
-                <b-nav-item href="#">Savory</b-nav-item>
-                <b-nav-item href="#">All</b-nav-item>
+                <b-nav-item href="{% url 'recipes_filt' filter=1 %}">Sweet</b-nav-item>
+                <b-nav-item href="{% url 'recipes_filt' filter=2 %}">Savory</b-nav-item>
+                <b-nav-item href="{% url 'recipes' %}" class="active">All</b-nav-item>
               </b-navbar-nav>
 
               <b-navbar-nav id="favorite">
-                  <a href="#"> <img width= 30px height=30px id="favorite_heart" v-bind:src="'static/images/favorites.png'"/></a>
+                  <a href="#"> <img width= 30px height=30px id="favorite_heart" v-bind:src="'/static/images/favorites.png'"/></a>
               </b-navbar-nav>
 
               <b-navbar-nav id="login-buttons">
@@ -159,8 +159,8 @@
             <div>
                 <div class="recipe-text">
                     <div id="recipe-title" v-html="title"> </div>
-                    <div class="recipe-veg" v-if="meat_indicator=='True'"><img v-bind:src="'static/images/non-veg.png'" alt="non-veg-indicator"/></div>
-                    <div class="recipe-veg" v-else><img v-bind:src="'static/images/veg.png'" alt="veg-indicator"/></div>
+                    <div class="recipe-veg" v-if="meat_indicator=='True'"><img v-bind:src="'/static/images/non-veg.png'" alt="non-veg-indicator"/></div>
+                    <div class="recipe-veg" v-else><img v-bind:src="'/static/images/veg.png'" alt="veg-indicator"/></div>
                 </div>
                 </br>
                 <div>
