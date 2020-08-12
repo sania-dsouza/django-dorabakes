@@ -294,6 +294,6 @@ input[type="checkbox"]
     margin-right: 5px;
     }
 
-a.nav-link.active {
+li.nav-item:visited {
     color: #5c3113 !important;
     }

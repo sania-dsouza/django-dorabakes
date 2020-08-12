@@ -88,9 +88,9 @@ def recipes(request):
 @csrf_protect
 def recipes_filt(request, filter):
 
-    if filter == 1:
+    if filter == "sweet":
         recipes = Recipe.objects.filter(category="SWEET")
-    elif filter == 2:
+    elif filter == "savory":
         recipes = Recipe.objects.filter(category="SAVORY")
     else:
         recipes = Recipe.objects.all()

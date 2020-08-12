@@ -7,7 +7,7 @@ from . import views
 urlpatterns = [
     # path('', views.base_page, name='base'),
     path('', views.recipes, name='recipes'),
-    path('<int:filter>/', views.recipes_filt, name='recipes_filt'),
+    path('<filter>/', views.recipes_filt, name='recipes_filt'),
     path('login/', views.login_page, name='login'),
     path('signup/', views.signup_page, name='signup'),
     path('written_recipe/<id>', views.written_recipe, name='written-recipe'),

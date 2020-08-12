@@ -26,9 +26,9 @@
 
             <b-collapse id="nav-collapse" is-nav>
               <b-navbar-nav>
-                <b-nav-item href="{% url 'recipes_filt' filter=1 %}">Sweet</b-nav-item>
-                <b-nav-item href="{% url 'recipes_filt' filter=2 %}">Savory</b-nav-item>
-                <b-nav-item href="{% url 'recipes' %}" class="active">All</b-nav-item>
+                <b-nav-item href="{% url 'recipes_filt' filter='sweet' %}">Sweet</b-nav-item>
+                <b-nav-item href="{% url 'recipes_filt' filter='savory' %}">Savory</b-nav-item>
+                <b-nav-item href="{% url 'recipes' %}" >All</b-nav-item>
               </b-navbar-nav>
 
               <b-navbar-nav id="favorite">
@@ -116,6 +116,7 @@
                 modalID: "#recipeModal"
           });
           });
+
           });
 
     </script>
