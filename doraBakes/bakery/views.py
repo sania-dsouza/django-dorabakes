@@ -60,10 +60,10 @@ def signup_page(request):
                 time.sleep(2)
                 user = User.objects.create_user(username=username, email=email, password=password, first_name=fname)
                 messages.info(request, "User created successfully!")
-                return render(request, 'bakery/recipes.html')
+                return HttpResponseRedirect('/')
         except IntegrityError as e:
             messages.error(request, "Username already exists.")
-            return render(request, 'bakery/signup.html', {'form': form})
+        return render(request, 'bakery/signup.html', {'form': form})
 
     else:
         form = SignUpForm()
@@ -102,6 +102,7 @@ def recipes_filt(request, filter):
 
 
 @login_required()
+@csrf_exempt
 def recipes_user(request, username):
     recipes = Recipe.objects.all()
     first_name = User.objects.get(username=username)
