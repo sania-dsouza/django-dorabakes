@@ -37,7 +37,7 @@ def login_page(request):
             if user is not None:
                 time.sleep(2)
                 login(request, user)
-                return HttpResponseRedirect(reverse('recipes_user', args=(request.user.username,)))
+                return HttpResponseRedirect(reverse('recipes_user', args=(request.user.username, )))
             else:
                 messages.error(request, "Username and password didn't match.")
                 return HttpResponseRedirect('/')
@@ -101,6 +101,13 @@ def recipes_filt(request, filter):
     return render(request, 'bakery/recipes.html', data)
 
 
-@csrf_protect
+@login_required()
 def recipes_user(request, username):
-    return HttpResponse("Recipes of the logged in user")
+    recipes = Recipe.objects.all()
+    first_name = User.objects.get(username=username)
+    data = {
+        'recipes': recipes,
+        'username': username,
+        'first_name': first_name
+    }
+    return render(request, 'bakery/recipes.html', data)

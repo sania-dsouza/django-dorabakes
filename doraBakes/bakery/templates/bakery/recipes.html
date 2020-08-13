@@ -90,8 +90,12 @@
         </div>
 
         <div id="main_app">
+<!--            <div id="app_greeting">-->
+<!--              [[ message ]]-->
+<!--            </div>-->
             <div id="app_greeting">
-              [[ message ]]
+                <h1 v-if="user"><strong>Welcome {{ first_name }}!</strong></h1>
+                <h1 v-else><strong>[[message]]</strong></h1>
             </div>
             </br>
 
@@ -185,7 +189,8 @@
     var bakery = new Vue({
             el: "#app_greeting",
             data: {
-                message: "Welcome to Dora Bakes!"
+                message: "Welcome to Dora Bakes!",
+                user: '{{username}}'
             },
             delimiters : ['[[', ']]']
         })
@@ -209,7 +214,7 @@
                         cooking_time: '{{ recipe.cooking_time }}',
                     },
                 {% endfor %}
-                        ],
+                        ]
              },
             getters: {
                 getRecipeAll: (state) => () => {
