@@ -74,7 +74,7 @@ button.close:hover {
     font-family: "Courier New";
     background-color: #5c3113;
     border-radius: 20px;
-    margin: 0px 20px 20px 20px;
+    margin: 0px 20px 40px 20px;
     color: white;
     float: left;
     min-height: 425px;
@@ -294,6 +294,3 @@ input[type="checkbox"]
     margin-right: 5px;
     }
 
-li.nav-item:visited {
-    color: #5c3113 !important;
-    }

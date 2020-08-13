@@ -12,12 +12,12 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
-    <link rel = "stylesheet" type="text/css" href="../static/bakery/style.css">
+    <link rel = "stylesheet" type="text/css" href="../static/bakery/base_style.css">
     <link rel= "shortcut icon" type='image/png' href="../static/favicon/favicon.png" />
 </head>
 <body>
     <div class="bakery">
-
+        {% include "./_modal.html" %}
         <div id="nav_bar">
           <b-navbar toggleable="lg" type="light"  prop="sticky">
             <b-navbar-brand tag="h1" href="#" class="mb-0">Dora Bakes</b-navbar-brand>
@@ -60,6 +60,7 @@
         </div>
 
         <div class="sidebar">
+
             <div class="filter_title"> Cooking time </div>
             <form action="">
               <input type="checkbox" id="time_range1" name="time_range1" value="0-30">
@@ -69,11 +70,13 @@
               <input type="checkbox" id="time_range3" name="time_range3" value="60-90">
               <label for="time_range3" class="filter_text"> 60 minutes - 90 minutes</label>
               <input type="checkbox" id="time_range4" name="time_range4" value=">90">
-                <label for="time_range4" class="filter_text"> Over 90 minutes </label></br>
+              <label for="time_range4" class="filter_text"> Over 90 minutes </label></br>
               <input class="filter_btns" type="submit" value="Apply">
               <input class="filter_btns" type="button" value="Clear">
             </form>
+
             </br>
+
             <div class="filter_title"> Includes egg? </div>
             <form action="">
               <input type="radio" id="answer1" name="egg_answer" value="Yes">
@@ -83,42 +86,40 @@
               <input class="filter_btns" type="submit" value="Apply">
               <input class="filter_btns" type="button" value="Clear">
             </form>
+
         </div>
 
-    <div id="main_app">
-        <div id="app_greeting">
-          [[ message ]]
-        </div>
-        </br>
-        {% include "./_modal.html" %}
+        <div id="main_app">
+            <div id="app_greeting">
+              [[ message ]]
+            </div>
+            </br>
 
-        <div class="recipe_card_container">
-        <recipe-card-list></recipe-card-list>
-        </div>
+            <div class="recipe_card_container">
+                <recipe-card-list></recipe-card-list>
+            </div>
         </div>
     </div>
 
     <script type="text/javascript">
-    $(function () {
-        $("#loginBtn").modalForm({
-            formURL: "{% url 'login' %}",
-            modalID: "#loginModal"
-          });
+        $(function () {
+            $("#loginBtn").modalForm({
+                formURL: "{% url 'login' %}",
+                modalID: "#loginModal"
+              });
 
-        $("#signupBtn").modalForm({
-            formURL: "{% url 'signup' %}",
-            modalID: "#signupModal"
-          });
+            $("#signupBtn").modalForm({
+                formURL: "{% url 'signup' %}",
+                modalID: "#signupModal"
+              });
 
-        $(".recipeBtn").each(function(){
-            $(this).modalForm({
-                formURL: $(this).data("form-url"),
-                modalID: "#recipeModal"
-          });
-          });
-
-          });
-
+            $(".recipeBtn").each(function(){
+                $(this).modalForm({
+                    formURL: $(this).data("form-url"),
+                    modalID: "#recipeModal"
+                });
+              });
+        });
     </script>
 
     <!-- Vue.js integration -->
