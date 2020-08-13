@@ -76,7 +76,7 @@ def written_recipe(request, id):
     return render(request, 'bakery/written.html', {'recipe': recipe})
 
 
-@csrf_protect
+@csrf_exempt
 def recipes(request):
     recipes = Recipe.objects.all()
     data = {
@@ -85,7 +85,7 @@ def recipes(request):
     return render(request, 'bakery/recipes.html', data)
 
 
-@csrf_protect
+@csrf_exempt
 def recipes_filt(request, filter):
 
     if filter == "sweet":
