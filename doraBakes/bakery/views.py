@@ -105,10 +105,9 @@ def recipes_filt(request, filter):
 @csrf_exempt
 def recipes_user(request, username):
     recipes = Recipe.objects.all()
-    first_name = User.objects.get(username=username)
+    first_name = User.objects.get(username=username).first_name
     data = {
         'recipes': recipes,
-        'username': username,
-        'first_name': first_name
+        'first_name': first_name,
     }
     return render(request, 'bakery/recipes.html', data)
