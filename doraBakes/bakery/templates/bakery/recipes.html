@@ -28,7 +28,7 @@
               <b-navbar-nav>
                 <b-nav-item href="{% url 'recipes_filt' filter='sweet' %}">Sweet</b-nav-item>
                 <b-nav-item href="{% url 'recipes_filt' filter='savory' %}">Savory</b-nav-item>
-                <b-nav-item href="{% url 'recipes' %}" >All</b-nav-item>
+                <b-nav-item href="{% url 'recipes_filt' filter='all' %}" >All</b-nav-item>
               </b-navbar-nav>
 
               <b-navbar-nav id="favorite">
@@ -62,17 +62,17 @@
         <div class="sidebar">
 
             <div class="filter_title"> Cooking time </div>
-            <form method="post" id="cooking_time_filt">
+            <form method="post" id="cooking_time_filt" action="{% url 'recipes_filt' filter='cooking_time' %}">
                 {% csrf_token %}
-              <input type="checkbox" id="time_range1" name="time_range1" value="0-30">
-              <label for="time_range1" class="filter_text"> 0 - 30 minutes</label>
-              <input type="checkbox" id="time_range2" name="time_range2" value="30-60">
-              <label for="time_range2" class="filter_text"> 30 minutes - 60 minutes</label>
-              <input type="checkbox" id="time_range3" name="time_range3" value="60-90">
-              <label for="time_range3" class="filter_text"> 60 minutes - 90 minutes</label>
-              <input type="checkbox" id="time_range4" name="time_range4" value=">90">
-              <label for="time_range4" class="filter_text"> Over 90 minutes </label></br>
-              <input class="filter_btns" type="submit" value="Apply">
+              <input type="checkbox" id="0-30" name="time_range" value="0-30">
+              <label for="0-30" class="filter_text"> 0 - 30 minutes</label>
+              <input type="checkbox" id="30-60" name="time_range" value="30-60">
+              <label for="30-60" class="filter_text"> 30 minutes - 60 minutes</label>
+              <input type="checkbox" id="60-90" name="time_range" value="60-90">
+              <label for="60-90" class="filter_text"> 60 minutes - 90 minutes</label>
+              <input type="checkbox" id=">90" name="time_range" value=">90">
+              <label for=">90" class="filter_text"> Over 90 minutes </label></br>
+              <input class="filter_btns" type="submit" value="Apply" name="Apply_cooking_time">
               <input class="filter_btns" type="button" value="Clear" onclick="javascript:clearform('cooking_time_filt');">
             </form>
 
@@ -143,8 +143,8 @@
     <template id="recipeCardList">
         <div class="recipe-card-list">
             <recipe-card
-            v-for="recipe in recipes"
-            v-bind:key="recipe.id"
+            v-for="(recipe,i) in recipes"
+            v-bind:key="`${i}-${recipe.id}`"
             v-bind:id="recipe.id"
             v-bind:title="recipe.title"
             v-bind:category="recipe.category"

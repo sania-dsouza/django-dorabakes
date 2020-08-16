@@ -88,15 +88,24 @@ def recipes(request):
 
 @csrf_exempt
 def recipes_filt(request, filter):
-
     if filter == "sweet":
         recipes = Recipe.objects.filter(category="SWEET")
     elif filter == "savory":
         recipes = Recipe.objects.filter(category="SAVORY")
-    else:
-
+    elif filter == "all":
         recipes = Recipe.objects.all()
-
+    elif filter == "cooking_time":
+        time_ranges = ['>90']
+        recipes= []
+        for i in time_ranges:
+            # split the range into two numbers
+            r = i.split('-')
+            if len(r) == 1:
+                recipes.append(Recipe.objects.filter(cooking_time__range=(90,)))
+            else:
+                recipes.append(Recipe.objects.filter(cooking_time__range=(int(r[0]), int(r[1]))))
+    else:
+        recipes = Recipe.objects.all()
     data = {
         'recipes': recipes,
     }
