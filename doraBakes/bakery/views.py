@@ -95,17 +95,20 @@ def recipes_filt(request, filter):
     elif filter == "all":
         recipes = Recipe.objects.all()
     elif filter == "cooking_time":
-        time_ranges = ['>90']
-        recipes= []
+        time_ranges = request.POST.getlist('time_range')
+        rec= []
         for i in time_ranges:
             # split the range into two numbers
             r = i.split('-')
             if len(r) == 1:
-                recipes.append(Recipe.objects.filter(cooking_time__range=(90,)))
+                rec.append(Recipe.objects.filter(cooking_time__range=(90, 300)))
             else:
-                recipes.append(Recipe.objects.filter(cooking_time__range=(int(r[0]), int(r[1]))))
+                rec.append(Recipe.objects.filter(cooking_time__range=(int(r[0]), int(r[1]))))
+            print(rec)
+            return render(request, 'bakery/recipes.html', {'recipes': rec[0]})
     else:
         recipes = Recipe.objects.all()
+
     data = {
         'recipes': recipes,
     }
