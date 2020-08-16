@@ -62,7 +62,8 @@
         <div class="sidebar">
 
             <div class="filter_title"> Cooking time </div>
-            <form action="">
+            <form method="post" id="cooking_time_filt">
+                {% csrf_token %}
               <input type="checkbox" id="time_range1" name="time_range1" value="0-30">
               <label for="time_range1" class="filter_text"> 0 - 30 minutes</label>
               <input type="checkbox" id="time_range2" name="time_range2" value="30-60">
@@ -72,19 +73,19 @@
               <input type="checkbox" id="time_range4" name="time_range4" value=">90">
               <label for="time_range4" class="filter_text"> Over 90 minutes </label></br>
               <input class="filter_btns" type="submit" value="Apply">
-              <input class="filter_btns" type="button" value="Clear">
+              <input class="filter_btns" type="button" value="Clear" onclick="javascript:clearform('cooking_time_filt');">
             </form>
 
             </br>
 
             <div class="filter_title"> Includes egg? </div>
-            <form action="">
+            <form method="post" id="contains_egg_filt">
               <input type="radio" id="answer1" name="egg_answer" value="Yes">
               <label for="answer1" class="filter_text"> Yes</label>
               <input type="radio" id="answer2" name="egg_answer" value="No">
               <label for="answer2" class="filter_text"> No </label> </br>
               <input class="filter_btns" type="submit" value="Apply">
-              <input class="filter_btns" type="button" value="Clear">
+              <input class="filter_btns" type="button" value="Clear" onclick="javascript:clearform('contains_egg_filt')">
             </form>
 
         </div>
@@ -124,6 +125,12 @@
                 });
               });
         });
+    </script>
+
+    <script type="text/javascript">
+    function clearform(filter_name){
+        document.getElementById(filter_name).reset();
+    }
     </script>
 
     <!-- Vue.js integration -->
@@ -216,11 +223,6 @@
                 {% endfor %}
                         ]
              },
-            getters: {
-                getRecipeAll: (state) => () => {
-                    return state.recipes.find(recipes => 2 == 2)
-                    },
-                }
         })
 
     //component registration
