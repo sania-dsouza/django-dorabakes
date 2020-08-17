@@ -79,7 +79,7 @@
             </br>
 
             <div class="filter_title"> Includes egg? </div>
-            <form method="post" id="contains_egg_filt">
+            <form method="post" id="contains_egg_filt" action="{% url 'recipes_filt' filter='contains_egg' %}">
               <input type="radio" id="answer1" name="egg_answer" value="Yes">
               <label for="answer1" class="filter_text"> Yes</label>
               <input type="radio" id="answer2" name="egg_answer" value="No">

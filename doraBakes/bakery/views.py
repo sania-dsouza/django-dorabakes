@@ -104,8 +104,17 @@ def recipes_filt(request, filter):
                 rec.append(Recipe.objects.filter(cooking_time__range=(90, 300)))
             else:
                 rec.append(Recipe.objects.filter(cooking_time__range=(int(r[0]), int(r[1]))))
-            print(rec)
             return render(request, 'bakery/recipes.html', {'recipes': rec[0]})
+    elif filter == "contains_egg":
+        egg = request.POST.get('egg_answer')
+        print(egg)
+        rec = []
+        if egg == "Yes":
+            rec.append(Recipe.objects.filter(meat_indicator="True"))
+        else:
+            rec.append(Recipe.objects.filter(meat_indicator="False"))
+        return render(request, 'bakery/recipes.html', {'recipes': rec[0]})
+
     else:
         recipes = Recipe.objects.all()
 
